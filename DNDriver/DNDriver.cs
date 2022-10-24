@@ -98,7 +98,7 @@ public class DNDriver
         
         var options = new AppiumOptions();
         options.AddAdditionalCapability("app", m_appPath);
-        var launchTimeout = 30 * 1000;
+        var launchTimeout = 30; // UNIT is SECOND !!!
         options.AddAdditionalCapability("ms:waitForAppLaunch", launchTimeout.ToString());
         m_session = new WindowsDriver<WindowsElement>(new Uri(m_wadServer), options, TimeSpan.FromSeconds(commandTimeout));
     }
