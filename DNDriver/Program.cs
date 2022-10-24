@@ -19,6 +19,9 @@ class Program
         
         [Option("password", Required = true, HelpText = "set password for downloader")]
         public string password { get; set; }
+
+        [Option("launchTimeout", Required = false, Default = 30, HelpText = "Launch Downloader timeout (seconds)")]
+        public int launchTimeout { get; set; }
         
         [Option("loginRetry", Required = false, Default = 5, HelpText = "try to login that many times")]
         public int loginRetry { get; set; }
@@ -50,7 +53,7 @@ class Program
         logger.Info("DNDriver started");
         try
         {
-            dnDriver.Connect();
+            dnDriver.Connect(opts.launchTimeout);
             dnDriver.Download(opts.loginRetry, opts.downloadTimeout);
             logger.Info("DNDriver completed");
             Environment.ExitCode = 0;

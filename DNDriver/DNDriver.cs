@@ -90,16 +90,18 @@ public class DNDriver
     
     /// <summary>
     /// Connect to target server and launch Downloader
+    /// <param name="launchTimeout">Timeout(seconds) to launch program</param>
+    /// <param name="commandTimeout">Timeout(seconds) for each driver operation</param>
     /// </summary>
-    public void Connect(int commandTimeout = 60)
+    public void Connect(int launchTimeout, int commandTimeout = 60)
     {
         if (m_session != null)
             return;
         
         var options = new AppiumOptions();
         options.AddAdditionalCapability("app", m_appPath);
-        var launchTimeout = 30; // UNIT is SECOND !!!
-        options.AddAdditionalCapability("ms:waitForAppLaunch", launchTimeout.ToString());
+        if (launchTimeout > 0)
+            options.AddAdditionalCapability("ms:waitForAppLaunch", launchTimeout.ToString());
         m_session = new WindowsDriver<WindowsElement>(new Uri(m_wadServer), options, TimeSpan.FromSeconds(commandTimeout));
     }
 
