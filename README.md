@@ -11,7 +11,7 @@ C> DNDriver
 
 - 設定參數
 ```
-C> DNDriver --server=http://127.0.0.1:4713 --path=C:\Metastock\Downloader\Downloader.exe --user=<downloader userid> --password=<downloader password>
+C> DNDriver --server=http://127.0.0.1:4723 --path=C:\Metastock\Downloader\Downloader.exe --user=<downloader userid> --password=<downloader password>
 ```
 
 ## Installation
@@ -24,7 +24,7 @@ C> DNDriver --server=http://127.0.0.1:4713 --path=C:\Metastock\Downloader\Downlo
 - 設定 Windows application driver
   - Windows需開啟Developer模式(https://learn.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development)
 
-- 使用管理員權限執行Windows application driver, 預設會listen在http://127.0.0.1:4713
+- 使用管理員權限執行Windows application driver, 預設會listen在http://127.0.0.1:4723
 
 ### Metastock Downloader
 
@@ -40,8 +40,7 @@ C> DNDriver --server=http://127.0.0.1:4713 --path=C:\Metastock\Downloader\Downlo
 - 定時啟動DNDriver (請設定相關command line參數),
 - DNDriver啟動時會自動叫起Downloader, 切換到Download tab, 點擊Download按鈕, 然後等到下載完成看到Report時, 關閉Report視窗, 以及Downloader程式,
 - 如果一切成功的話, 程式的Exit code是0, 可以繼續後續動作,
-- Log file放在Logs目錄內,
-- 
+- Log file放在Logs目錄內
   
 
 

@@ -8,7 +8,7 @@ class Program
 {
     public class Options
     {
-        [Option("server", Required = false, Default = "http://127.0.0.1:4713", HelpText = "define WAD server location")]
+        [Option("server", Required = false, Default = "http://127.0.0.1:4723", HelpText = "define WAD server location")]
         public string server { get; set; }
         
         [Option("path", Required = false, Default = "C:\\Metastock\\Downloader\\Downloader.exe", HelpText = "define full path location of downloader.exe")]
@@ -38,7 +38,7 @@ class Program
         var logger = LogManager.GetLogger("App");
 
         /*
-        opts.server = @"http://10.211.55.6:4173";
+        opts.server = @"http://10.211.55.6:4723";
         opts.downloaderPath = @"C:\Code\Metastock\Downloader\Downloader.exe";
         opts.userId = "2-1765849";
         opts.password = "26BC2A3FAA8A";
