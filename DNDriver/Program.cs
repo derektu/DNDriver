@@ -8,19 +8,19 @@ using log4net.Repository.Hierarchy;
 
 class CommandOptions
 {
-    [Option("wad", Required = false, Default = "", HelpText = "Full path of WinAppDriver.exe if you like DNDriver to launch WAD automatically")]
+    [Option("wad", Required = false, Default = @"C:\Metastock\WAD\WinAppDriver.exe", HelpText = "Full path of WinAppDriver.exe if you like DNDriver to launch WAD automatically")]
     public string wadPath { get; set; }
 
-    [Option("server", Required = false, Default = "http://127.0.0.1:4723", HelpText = "WAD server location")]
+    [Option("server", Required = false, Default = @"http://127.0.0.1:4723", HelpText = "WAD server location")]
     public string wadServer { get; set; }
         
-    [Option("downloader", Required = false, Default = "C:\\Metastock\\Downloader\\Downloader.exe", HelpText = "Full path of downloader.exe")]
+    [Option("downloader", Required = false, Default = @"C:\Metastock\Downloader\Downloader.exe", HelpText = "Full path of downloader.exe")]
     public string downloaderPath { get; set; }
         
-    [Option("user", Required = true, HelpText = "set userId for downloader")]
+    [Option("user", Required = true, HelpText = "UserId for downloader")]
     public string userId { get; set; }
         
-    [Option("password", Required = true, HelpText = "set password for downloader")]
+    [Option("password", Required = true, HelpText = "Password for downloader")]
     public string password { get; set; }
 
     [Option("launchTimeout", Required = false, Default = 30, HelpText = "Timeout(seconds) to launch Downloader.exe")]
